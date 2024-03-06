@@ -14,4 +14,35 @@
 не окажется, значит нужно будет вывести пустой массив.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+const arr = [];
+const arrLength = 5;
+let sumOfArrElem = 0;
+
+for (let i = 0; i < arrLength; i++) {
+  arr.push(Math.floor(Math.random() * 10));
+}
+// 1
+for (const elem of arr) {
+  sumOfArrElem += elem;
+}
+
+// 2
+let minElemOfArr = arr[0];
+for (const i in arr) {
+  if (minElemOfArr > arr[i]) {
+    minElemOfArr = arr[i];
+  }
+}
+
+// 3
+const arrOfIndex = [];
+for (const i in arr) {
+  if (arr[i] === 3) {
+    arrOfIndex.push(+i);
+  }
+}
+
+console.log(arr);
+console.log(`Сумма элементов массива: ${sumOfArrElem}`);
+console.log(`Минимальное значение в массиве: ${minElemOfArr}`);
+console.log(arrOfIndex);
